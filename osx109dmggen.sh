@@ -1,11 +1,11 @@
 #!/bin/sh -ex
-#
+# 
 # Easy script for creating OS X Mavericks installation disk image
-#
+# 
 # Operation confirmation:
 #    OS X 10.6.8
 #    OS X 10.9.3
-#
+# 
 # The MIT License (MIT)
 # 
 # Copyright (c) 2014 mattintosh4
@@ -33,7 +33,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 InstallESD_dmg="/Applications/Install OS X Mavericks.app/Contents/SharedSupport/InstallESD.dmg"
 
-if test -f "${InstallESD_dmg}"
+if test ! -f "${InstallESD_dmg}"
 then
     echo "${InstallESD_dmg} is not found."
     exit 1
