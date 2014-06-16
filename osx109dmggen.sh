@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -e
 # 
 # Easy script for creating OS X Mavericks installation disk image
 # 
@@ -38,6 +38,8 @@ then
     echo "${InstallESD_dmg} is not found."
     exit 1
 fi
+
+set -x
 
 hdiutil attach "${InstallESD_dmg}" -mountpoint /Volumes/ESD -nobrowse
 hdiutil convert -ov -format UDSP -o /tmp/foo /Volumes/ESD/BaseSystem.dmg
